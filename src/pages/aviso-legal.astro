@@ -1,17 +1,15 @@
 ---
-import '../styles/global.css';
+import Base from "../layouts/Base.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aviso legal — Irene Ovelar</title>
-  </head>
-  <body>
-    <Header />
+<Base
+  title="Aviso Legal · Irene Ovelar · Psicóloga en Bilbao"
+  description="Aviso legal del sitio web de Irene Ovelar, psicóloga sanitaria en Bilbao."
+  canonical="https://ireneovelar.netlify.app/aviso-legal"
+>
+  <Header />
 
     <main>
 
@@ -198,5 +196,4 @@ import Footer from "../components/layout/Footer.astro";
     </main>
 
     <Footer />
-  </body>
-</html>
+</Base>

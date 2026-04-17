@@ -1,19 +1,16 @@
 ---
-import '../styles/global.css';
+import Base from "../layouts/Base.astro";
 import Header from "../components/layout/Header.astro";
 import ServiciosSection from '../components/home/Servicios.astro';
 import Footer from '../components/layout/Footer.astro';
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios — Irene Ovelar</title>
-  </head>
-  <body>
-    <Header />
-    <ServiciosSection />
-    <Footer />
-  </body>
-</html>
+<Base
+  title="Servicios · Irene Ovelar · Psicóloga en Bilbao"
+  description="Descubre los servicios de psicología que ofrece Irene Ovelar: psicoterapia individual, terapia de pareja y familia, y atención perinatal en Bilbao."
+  canonical="https://ireneovelar.netlify.app/servicios"
+>
+  <Header />
+  <ServiciosSection />
+  <Footer />
+</Base>

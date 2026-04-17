@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = "https://ireneovelar.netlify.app/assets/images/hero_banner_LXL.jpg",
+} = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Irene Ovelar · Psicóloga Sanitaria" />
+
+
+<!-- Schema.org: negocio local -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Irene Ovelar · Psicóloga Sanitaria",
+    "url": "https://ireneovelar.netlify.app",
+    "telephone": "+34637738132",
+    "email": "ireneovelar@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaza Valenzuela, 1, 4º derecha, departamento 6",
+      "addressLocality": "Bilbao",
+      "addressRegion": "Bizkaia",
+      "postalCode": "48001",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.2630,
+      "longitude": -2.9350
+    },
+    "medicalSpecialty": "Psicología Sanitaria",
+    "description": "Psicóloga sanitaria en Bilbao especializada en psicoterapia individual, terapia de pareja y familia, y salud mental perinatal.",
+    "openingHours": "Mo-Fr 09:00-20:00",
+    "sameAs": []
+  }
+</script>

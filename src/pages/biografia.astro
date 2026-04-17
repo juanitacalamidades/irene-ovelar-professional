@@ -1,19 +1,16 @@
 ---
-import '../styles/global.css';
+import Base from "../layouts/Base.astro";
 import Header from "../components/layout/Header.astro";
 import BiografiaSection from '../components/home/Biografia.astro';
 import Footer from '../components/layout/Footer.astro';
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biografía — Irene Ovelar</title>
-  </head>
-  <body>
-    <Header />
-    <BiografiaSection />
-    <Footer />
-  </body>
-</html>
+<Base
+  title="Biografía · Irene Ovelar · Psicóloga Sanitaria en Bilbao"
+  description="Conoce a Irene Ovelar, psicóloga sanitaria colegiada en Bilbao. Formación, experiencia y enfoque terapéutico."
+  canonical="https://ireneovelar.netlify.app/biografia"
+>
+  <Header />
+  <BiografiaSection />
+  <Footer />
+</Base>
