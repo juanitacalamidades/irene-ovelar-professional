@@ -1,0 +1,195 @@
+---
+// components/ContactoHome.astro
+---
+
+<section class="section contacto-home">
+  <div class="container">
+    <div class="inner">
+
+      <div class="left">
+        <p class="eyebrow">Contacto</p>
+        <h2>¿Damos el<br />primer paso?</h2>
+        <p class="intro">
+          Si estás pensando en iniciar un proceso terapéutico o necesitas resolver
+          algunas dudas, estaré encantada de ayudarte.
+        </p>
+        <ul class="contact-links">
+          <li><a href="tel:+34637738132">+34 637 738 132</a></li>
+          <li><a href="mailto:ireneovelar@gmail.com">ireneovelar@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="right">
+        <div class="contact-row">
+          <span class="contact-label">Dónde nos encontramos</span>
+          <span class="contact-value">Plaza Valenzuela, 1 · Bilbao</span>
+          <span class="contact-sub">4º derecha, departamento número 6</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Sesiones online</span>
+          <span class="contact-value">También hago sesiones online</span>
+          <span class="contact-sub">Si lo prefieres, podemos trabajar a distancia</span>
+        </div>
+        <div class="contact-row contact-row--link">
+          <a href="/contacto" class="btn-more">Ver cómo llegar →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacto-home {
+    background: var(--color-crema);
+    padding-top: 96px;
+    padding-bottom: 96px;
+    width: 100%;
+  }
+
+  /* ── Container — mismo ancho que Servicios y Biografía: 64rem ── */
+  .container {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ── Columna izquierda ── */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ocre);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .left h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-grafito);
+    margin-bottom: 20px;
+  }
+
+  .left h2 em {
+    font-style: normal;
+    color: var(--color-ocre);
+  }
+
+  .intro {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-piedra);
+    line-height: 1.75;
+    max-width: 340px;
+    margin-bottom: 28px;
+  }
+
+  .contact-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-links a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-grafito);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .contact-links a:hover {
+    color: var(--color-ocre);
+  }
+
+  /* ── Columna derecha ── */
+  .right {
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgba(44, 42, 40, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-blanco);
+    margin-top: 32px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px 28px;
+    border-bottom: 0.5px solid rgba(44, 42, 40, 0.12);
+  }
+
+  .contact-row--link {
+    border-bottom: none;
+  }
+
+  .contact-label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ocre);
+    font-weight: 500;
+  }
+
+  .contact-value {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-grafito);
+  }
+
+  .contact-sub {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-piedra);
+    margin-top: 2px;
+  }
+
+  .btn-more {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-ocre);
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.15s;
+  }
+
+  .btn-more:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .contacto-home {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .right {
+      margin-top: 0;
+    }
+  }
+</style>

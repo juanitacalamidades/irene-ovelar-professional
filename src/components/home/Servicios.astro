@@ -1,0 +1,117 @@
+---
+const servicios = [
+  {
+    num: "01",
+    titulo: "Psicoterapia para personas adultas",
+    intro: "Acompañamiento en las diversas dificultades que pueden darse en la vida adulta.",
+    descripcion:
+      "Tales como momentos de crisis vital, de inseguridad en las relaciones, de sentir la autoestima dañada, problemas de ansiedad, estrés y depresión, duelos y pérdidas por relaciones que se acaban o por el fallecimiento de personas queridas, procesos de enfermedades propias o de personas cercanas, o malestares debidos a situaciones laborales complicadas.",
+  },
+  {
+    num: "02",
+    titulo: "Terapia para parejas",
+    intro: "Intervención en las dificultades que puedan darse en la relación de pareja.",
+    descripcion:
+      "Como crisis de la pareja, diferencias en la crianza de l@s hij@s, enfrentamiento a diversos cambios (inestabilidad económica, cuidado de familiares con enfermedad, cambios físicos derivados de enfermedad), falta de comunicación o confianza, alto nivel de conflictividad, celos e infidelidades, dificultades de relación con las familias y amistades. Asimismo, cuando la pareja decide que lo mejor es no continuar, se apoya en los procesos de separación y divorcio, para tratar de que sean lo menos dañinos posibles y que permitan continuar la nueva etapa sin quedar anclados en la relación terminada.",
+  },
+  {
+    num: "03",
+    titulo: "Terapia para familias",
+    intro: "Para aquellas familias que quieran afrontar sus dificultades, teniendo en cuenta las necesidades individuales de cada persona que forma parte.",
+    descripcion:
+      "La meta es mejorar la calidad de la vida familiar, e intervenir en la dinámica y en las dificultades que puedan surgir, como dificultades de comprensión y comunicación entre sus miembros, conflictos familiares frecuentes, adaptaciones a pérdidas de seres queridos, a separaciones y divorcios, y a la formación de nuevas familias, aceptación de las enfermedades, dificultades en los procesos de migración y cambios de residencia, abusos de sustancias en alguno de sus miembros, pérdida de empleo, etc.",
+  },
+  {
+    num: "04",
+    titulo: "Atención a la salud mental perinatal",
+    intro: "Acompañamiento y apoyo a madres y padres durante los procesos de búsqueda de embarazo, embarazo, parto y postparto, considerando las dificultades que puedan surgir, así como los necesarios reajustes emocionales que deben hacerse",
+    descripcion:
+      "En terapia individual o de pareja se trata de dar respuesta a todas aquellas demandas relacionadas con: ansiedad y depresión durante el embarazo y durante el postparto, ansiedad ante la futura maternidad o paternidad, adaptación de la pareja al nuevo rol de madres o padres, duelos por pérdidas gestacionales y perinatales, duelos por la imposibilidad de ser madre o padre, acompañamiento en lactancias complicadas y duelos por lactancia, secuelas psicológicas del parto complicado o cesáreas, afrontamiento del nacimiento y del cuidado de bebés prematuros, y acompañamiento en procesos de fertilidad/infertilidad.",
+  },
+];
+---
+
+<section class="bg-crema py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Cabecera -->
+    <div class="mb-14">
+      <p class="font-heading text-ocre text-sm tracking-widest uppercase mb-5">Qué ofrezco</p>
+      <h2 class="font-heading text-grafito text-2xl leading-tight">
+        Un espacio para<br />cada proceso vital
+      </h2>
+    </div>
+
+    <!-- Grid 2×2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0.5">
+      {servicios.map((s, i) => (
+        <button
+          type="button"
+          class="service-card group bg-blanco text-left w-full cursor-pointer transition-colors duration-200 hover:bg-[#FAF8F6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocre"
+          data-index={i}
+          aria-expanded="false"
+        >
+          <div class="py-12 px-10 flex flex-col h-full">
+
+            <!-- Número -->
+            <span class="font-heading text-ocre text-sm font-medium mb-6 block">{s.num}</span>
+
+            <!-- Título -->
+            <p class="font-heading text-grafito text-lg leading-snug mb-4">{s.titulo}</p>
+
+            <!-- Intro -->
+            <p class="text-piedra text-base leading-relaxed">{s.intro}</p>
+
+            <!-- Descripción expandible -->
+            <div
+              class="card-body overflow-hidden"
+              style="max-height: 0; transition: max-height 0.35s ease;"
+            >
+              <div class="border-t border-arena mt-6 pt-6">
+                <p class="text-piedra text-base leading-relaxed">{s.descripcion}</p>
+              </div>
+            </div>
+
+            <!-- Flecha -->
+            <div class="flex justify-end mt-8">
+              <span
+                class="card-arrow text-grafito text-lg leading-none transition-transform duration-300 inline-block"
+                aria-hidden="true"
+              >→</span>
+            </div>
+
+          </div>
+        </button>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const cards = document.querySelectorAll<HTMLButtonElement>(".service-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const body = card.querySelector<HTMLElement>(".card-body")!;
+      const arrow = card.querySelector<HTMLElement>(".card-arrow")!;
+      const isOpen = card.getAttribute("aria-expanded") === "true";
+
+      // Cerrar todas
+      cards.forEach((c) => {
+        const b = c.querySelector<HTMLElement>(".card-body")!;
+        const a = c.querySelector<HTMLElement>(".card-arrow")!;
+        b.style.maxHeight = "0px";
+        a.style.transform = "rotate(0deg)";
+        c.setAttribute("aria-expanded", "false");
+      });
+
+      // Abrir la pulsada si estaba cerrada
+      if (!isOpen) {
+        body.style.maxHeight = body.scrollHeight + "px";
+        arrow.style.transform = "rotate(45deg)";
+        card.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+</script>

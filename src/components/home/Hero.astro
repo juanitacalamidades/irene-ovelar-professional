@@ -1,0 +1,92 @@
+<section class="hero">
+  <img
+    src="/assets/images/hero_banner_LXL.jpg"
+    alt="Hero banner"
+    class="hero__image"
+  />
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content">
+    <h1 class="hero__headline md:px-40" aria-label="Un espacio seguro de escucha y atención amable">
+      <span class="typewriter"></span>
+    </h1>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+
+  .hero__content {
+    z-index: 2;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+
+  .hero__headline {
+    width: 55vw;
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.3;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    margin: 0;
+  }
+
+  .typewriter::after {
+    content: "|";
+    animation: blink 0.7s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
+
+<script>
+  const text = "Un espacio seguro de escucha  y atención amable";
+  const el = document.querySelector(".typewriter") as HTMLElement;
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      el.textContent = text.slice(0, ++i);
+      setTimeout(type, 60);
+    } else {
+      el.style.setProperty("--cursor-display", "none");
+      el.classList.add("done");
+    }
+  }
+
+  type();
+</script>
+
+<style>
+  .typewriter.done::after {
+    display: none;
+  }
+</style>

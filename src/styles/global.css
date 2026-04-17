@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Tipografías */
+  --font-heading: 'Comfortaa', cursive;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Escala tipográfica — Perfect Fourth (×1.333)
+     base: 1rem (16px)
+     xs   → 0.563rem  (~9px)   captions, labels
+     sm   → 0.750rem  (~12px)  small text, meta
+     base → 1.000rem  (16px)   body copy
+     md   → 1.333rem  (~21px)  lead / large body
+     lg   → 1.777rem  (~28px)  h5–h6
+     xl   → 2.369rem  (~38px)  h3–h4
+     2xl  → 3.157rem  (~51px)  h2
+     3xl  → 4.209rem  (~67px)  h1
+  */
+  --text-xs:   0.563rem;
+  --text-sm:   0.750rem;
+  --text-base: 1.000rem;
+  --text-md:   1.333rem;
+  --text-lg:   1.777rem;
+  --text-xl:   2.369rem;
+  --text-2xl:  3.157rem;
+  --text-3xl:  4.209rem;
+
+  /* Neutros */
+  --color-blanco: #FFFFFF;
+  --color-crema: #F7F5F2;
+  --color-arena: #E6E2DC;
+  --color-piedra: #A09890;
+  --color-grafito: #2C2A28;
+
+  /* Acento ocre */
+  --color-ocre-claro: #F5EDD8;
+  --color-ocre: #C49A3C;
+  --color-ocre-oscuro: #8A6820;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-grafito);
+    background-color: var(--color-blanco);
+  }
+
+  /* Headings — Comfortaa */
+  h1 { font-family: var(--font-heading); font-size: var(--text-3xl); line-height: 1.1; }
+  h2 { font-family: var(--font-heading); font-size: var(--text-2xl); line-height: 1.15; }
+  h3 { font-family: var(--font-heading); font-size: var(--text-xl);  line-height: 1.2; }
+  h4 { font-family: var(--font-heading); font-size: var(--text-lg);  line-height: 1.25; }
+  h5 { font-family: var(--font-heading); font-size: var(--text-md);  line-height: 1.3; }
+  h6 { font-family: var(--font-heading); font-size: var(--text-base); line-height: 1.35; }
+
+  /* Body elements — DM Sans */
+  p, li, dt, dd, blockquote, figcaption, label, input, textarea, select, button {
+    font-family: var(--font-body);
+  }
+
+  p        { font-size: var(--text-base); line-height: 1.6; }
+  .lead    { font-size: var(--text-md);   line-height: 1.5; }
+  small    { font-size: var(--text-sm);   line-height: 1.5; }
+  caption  { font-size: var(--text-xs);   line-height: 1.4; }
+}

@@ -1,0 +1,281 @@
+---
+---
+
+<section class="contacto-page">
+
+  <!-- HERO: texto + datos de contacto -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Contacto</p>
+      <h1>¿Damos un<br />primer paso<br /><em>juntas?</em></h1>
+      <p class="hero-intro">
+        Si estás pensando en iniciar un proceso terapéutico o necesitas resolver
+        algunas dudas, estaré encantada de ayudarte.
+      </p>
+      <ul class="contact-data">
+        <li><a href="tel:+34637738132">+34 637 738 132</a></li>
+        <li><a href="mailto:ireneovelar@gmail.com">ireneovelar@gmail.com</a></li>
+        <li><a href="https://wa.me/34637738132" target="_blank" rel="noopener noreferrer">Contacta por whatsapp</a></li>
+      </ul>
+    </div>
+
+    <div class="hero-right">
+      <p class="section-label">Mi espacio</p>
+      <h2 class="espacio-title">Dónde nos encontramos</h2>
+      <p class="espacio-desc">
+        Estoy en Bilbao. Plaza Valenzuela, 1. 4º derecha.<br />
+        En el departamento número 6.
+      </p>
+      <p class="espacio-online">
+        Si lo prefieres, también hago sesiones online.
+      </p>
+      <a
+        href="https://maps.google.com/?q=Plaza+Valenzuela+1+Bilbao"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-directions"
+      >
+        Cómo llegar
+      </a>
+    </div>
+  </div>
+
+  <!-- GALERÍA A PANTALLA COMPLETA -->
+  <div class="gallery">
+    <div class="gallery-slot slot-small">
+      <img src="assets/images/photo_001.jpg" alt="Consulta — ventana con plantas" />
+    </div>
+    <div class="gallery-slot slot-small">
+      <img src="assets/images/photo_005.jpeg" alt="Consulta — silla y mesa" />
+    </div>
+    <div class="gallery-slot slot-small">
+      <img src="assets/images/photo_002.jpg" alt="Consulta — silla y mesa" />
+    </div>
+    <div class="gallery-slot slot-small">
+      <img src="assets/images/photo_003.jpg" alt="Consulta — sofá" />
+    </div>
+  </div>
+
+  <!-- MAPA -->
+  <div class="map-wrap">
+    <iframe
+      title="Mapa consulta Irene Ovelar — Plaza Valenzuela 1, Bilbao"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.623342423439!2d-2.927310124160428!3d43.262575777608255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fcf71a00a69%3A0x69b8177bc96da4a!2sVenezuela%20Plaza%2C%201%2C%20Abando%2C%2048001%20Bilbao%2C%20Bizkaia%2C%20Spain!5e1!3m2!1sen!2sus!4v1776368284876!5m2!1sen!2sus"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+</section>
+
+<style>
+  .contacto-page {
+    --accent:    var(--color-ocre);
+    --dark:      var(--color-grafito);
+    --warm-bg:   var(--color-crema);
+    --warm-mid:  var(--color-arena);
+    --text:      var(--color-grafito);
+    --text-muted: var(--color-piedra);
+    --border:    rgba(44, 42, 40, 0.12);
+    font-family: var(--font-body);
+    color: var(--text);
+    width: 100%;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 48px;
+    background: var(--warm-bg);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 48px;
+    background: var(--color-blanco);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .hero-text h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-intro {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 360px;
+  }
+
+  .contact-data {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-data a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .contact-data a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── Mi espacio (columna derecha del hero) ── */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .espacio-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .espacio-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .espacio-online {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    padding: 14px 18px;
+    background: var(--warm-bg);
+    border-left: 3px solid var(--accent);
+    border-top: 0.5px solid var(--border);
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .btn-directions {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--dark);
+    color: var(--warm-bg);
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    align-self: flex-start;
+  }
+
+  .btn-directions:hover {
+    background: #554944;
+  }
+
+  /* ── Galería ── */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 340px;
+    gap: 2px;
+    background: var(--dark);
+  }
+
+  .gallery-slot {
+    overflow: hidden;
+    background: var(--warm-mid);
+  }
+
+  .gallery-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+     object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-slot:hover img {
+    transform: scale(1.03);
+  }
+
+  /* ── Mapa ── */
+  .map-wrap {
+    height: 400px;
+    margin-top: 48px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-text,
+    .hero-right {
+      padding: 40px 24px;
+    }
+
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 200px;
+    }
+
+    .slot-large {
+      grid-column: 1 / -1;
+    }
+
+    .map-wrap {
+      height: 300px;
+    }
+  }
+</style>
