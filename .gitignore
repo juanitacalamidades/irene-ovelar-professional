@@ -23,6 +23,3 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# components
-politica-privacidad.astro
-Mañana.txt
