@@ -75,7 +75,7 @@
     --text: #1a1614;
     --text-muted: #6b5f58;
     --border: rgba(61, 53, 48, 0.12);
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-body);
     width: 100%;
   }
 
@@ -95,16 +95,16 @@
   }
 
   .eyebrow {
-    font-size: 11px;
+    font-size: var(--text-xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--color-ocre, #C97B5A);
     font-weight: 500;
     margin-bottom: 8px;
   }
 
   .section-title {
-    font-size: 24px;
+    font-size: var(--text-lg);
     font-weight: 400;
     color: var(--text);
     margin-bottom: 40px;
@@ -127,7 +127,7 @@
 
   .pillar-num {
     display: block;
-    font-size: 36px;
+    font-size: var(--text-xl);
     font-weight: 400;
     color: #E8D5C8;
     margin-bottom: 16px;
@@ -135,14 +135,14 @@
   }
 
   .pillar-title {
-    font-size: 14px;
+    font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text);
     margin-bottom: 8px;
   }
 
   .pillar-desc {
-    font-size: 13px;
+    font-size: var(--text-sm);
     color: var(--text-muted);
     line-height: 1.65;
   }
@@ -198,7 +198,7 @@
   }
 
   .cita {
-    font-size: 17px;
+    font-size: var(--text-md);
     font-weight: 400;
     font-style: italic;
     color: var(--text);
@@ -210,14 +210,14 @@
   }
 
   .bio-p {
-    font-size: 14px;
+    font-size: var(--text-sm);
     color: var(--text-muted);
     line-height: 1.8;
     margin-bottom: 28px;
   }
 
   .btn-link {
-    font-size: 13px;
+    font-size: var(--text-sm);
     color: var(--accent);
     text-decoration: none;
     font-weight: 500;

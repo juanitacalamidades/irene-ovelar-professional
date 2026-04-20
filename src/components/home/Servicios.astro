@@ -3,115 +3,212 @@ const servicios = [
   {
     num: "01",
     titulo: "Psicoterapia para personas adultas",
-    intro: "Acompañamiento en las diversas dificultades que pueden darse en la vida adulta.",
     descripcion:
       "Tales como momentos de crisis vital, de inseguridad en las relaciones, de sentir la autoestima dañada, problemas de ansiedad, estrés y depresión, duelos y pérdidas por relaciones que se acaban o por el fallecimiento de personas queridas, procesos de enfermedades propias o de personas cercanas, o malestares debidos a situaciones laborales complicadas.",
   },
   {
     num: "02",
     titulo: "Terapia para parejas",
-    intro: "Intervención en las dificultades que puedan darse en la relación de pareja.",
     descripcion:
       "Como crisis de la pareja, diferencias en la crianza de l@s hij@s, enfrentamiento a diversos cambios (inestabilidad económica, cuidado de familiares con enfermedad, cambios físicos derivados de enfermedad), falta de comunicación o confianza, alto nivel de conflictividad, celos e infidelidades, dificultades de relación con las familias y amistades. Asimismo, cuando la pareja decide que lo mejor es no continuar, se apoya en los procesos de separación y divorcio, para tratar de que sean lo menos dañinos posibles y que permitan continuar la nueva etapa sin quedar anclados en la relación terminada.",
   },
   {
     num: "03",
     titulo: "Terapia para familias",
-    intro: "Para aquellas familias que quieran afrontar sus dificultades, teniendo en cuenta las necesidades individuales de cada persona que forma parte.",
     descripcion:
       "La meta es mejorar la calidad de la vida familiar, e intervenir en la dinámica y en las dificultades que puedan surgir, como dificultades de comprensión y comunicación entre sus miembros, conflictos familiares frecuentes, adaptaciones a pérdidas de seres queridos, a separaciones y divorcios, y a la formación de nuevas familias, aceptación de las enfermedades, dificultades en los procesos de migración y cambios de residencia, abusos de sustancias en alguno de sus miembros, pérdida de empleo, etc.",
   },
   {
     num: "04",
     titulo: "Atención a la salud mental perinatal",
-    intro: "Acompañamiento y apoyo a madres y padres durante los procesos de búsqueda de embarazo, embarazo, parto y postparto, considerando las dificultades que puedan surgir, así como los necesarios reajustes emocionales que deben hacerse",
     descripcion:
       "En terapia individual o de pareja se trata de dar respuesta a todas aquellas demandas relacionadas con: ansiedad y depresión durante el embarazo y durante el postparto, ansiedad ante la futura maternidad o paternidad, adaptación de la pareja al nuevo rol de madres o padres, duelos por pérdidas gestacionales y perinatales, duelos por la imposibilidad de ser madre o padre, acompañamiento en lactancias complicadas y duelos por lactancia, secuelas psicológicas del parto complicado o cesáreas, afrontamiento del nacimiento y del cuidado de bebés prematuros, y acompañamiento en procesos de fertilidad/infertilidad.",
   },
 ];
 ---
 
-<section class="bg-crema py-24 px-6">
-  <div class="max-w-5xl mx-auto">
+<section class="servicios-page">
 
-    <!-- Cabecera -->
-    <div class="mb-14">
-      <p class="font-heading text-ocre text-sm tracking-widest uppercase mb-5">Qué ofrezco</p>
-      <h2 class="font-heading text-grafito text-2xl leading-tight">
-        Un espacio para<br />cada proceso vital
-      </h2>
+  <!-- Header de página -->
+  <div class="page-header">
+    <div class="container">
+      <p class="eyebrow">Servicios</p>
+      <h1>Cómo puedo ayudarte</h1>
+      <p class="page-intro">
+        Trabajo desde un enfoque integrativo, adaptando el proceso terapéutico
+        a cada persona y al momento vital en que se encuentra.
+      </p>
     </div>
-
-    <!-- Grid 2×2 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0.5">
-      {servicios.map((s, i) => (
-        <button
-          type="button"
-          class="service-card group bg-blanco text-left w-full cursor-pointer transition-colors duration-200 hover:bg-[#FAF8F6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocre"
-          data-index={i}
-          aria-expanded="false"
-        >
-          <div class="py-12 px-10 flex flex-col h-full">
-
-            <!-- Número -->
-            <span class="font-heading text-ocre text-sm font-medium mb-6 block">{s.num}</span>
-
-            <!-- Título -->
-            <p class="font-heading text-grafito text-lg leading-snug mb-4">{s.titulo}</p>
-
-            <!-- Intro -->
-            <p class="text-piedra text-base leading-relaxed">{s.intro}</p>
-
-            <!-- Descripción expandible -->
-            <div
-              class="card-body overflow-hidden"
-              style="max-height: 0; transition: max-height 0.35s ease;"
-            >
-              <div class="border-t border-arena mt-6 pt-6">
-                <p class="text-piedra text-base leading-relaxed">{s.descripcion}</p>
-              </div>
-            </div>
-
-            <!-- Flecha -->
-            <div class="flex justify-end mt-8">
-              <span
-                class="card-arrow text-grafito text-lg leading-none transition-transform duration-300 inline-block"
-                aria-hidden="true"
-              >→</span>
-            </div>
-
-          </div>
-        </button>
-      ))}
-    </div>
-
   </div>
+
+  <!-- Lista de servicios -->
+  <div class="container">
+    <ul class="lista" role="list">
+      {servicios.map((s) => (
+        <li class="item">
+          <span class="item-num">{s.num}</span>
+          <div class="item-body">
+            <p class="item-titulo">{s.titulo}</p>
+            <p class="item-desc">{s.descripcion}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- CTA de contacto -->
+  <div class="contacto-strip">
+    <div class="container container--strip">
+      <p class="contacto-text">¿Tienes dudas sobre qué servicio se adapta mejor a tu situación?</p>
+      <a href="/contacto" class="contacto-btn">Escríbeme →</a>
+    </div>
+  </div>
+
 </section>
 
-<script>
-  const cards = document.querySelectorAll<HTMLButtonElement>(".service-card");
+<style>
+  .servicios-page {
+    width: 100%;
+  }
 
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const body = card.querySelector<HTMLElement>(".card-body")!;
-      const arrow = card.querySelector<HTMLElement>(".card-arrow")!;
-      const isOpen = card.getAttribute("aria-expanded") === "true";
+  .container {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
-      // Cerrar todas
-      cards.forEach((c) => {
-        const b = c.querySelector<HTMLElement>(".card-body")!;
-        const a = c.querySelector<HTMLElement>(".card-arrow")!;
-        b.style.maxHeight = "0px";
-        a.style.transform = "rotate(0deg)";
-        c.setAttribute("aria-expanded", "false");
-      });
+  /* ── Header ── */
+  .page-header {
+    background: var(--color-crema);
+    border-bottom: 0.5px solid rgba(44, 42, 40, 0.12);
+    padding: 72px 0 56px;
+  }
 
-      // Abrir la pulsada si estaba cerrada
-      if (!isOpen) {
-        body.style.maxHeight = body.scrollHeight + "px";
-        arrow.style.transform = "rotate(45deg)";
-        card.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-</script>
+  .eyebrow {
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ocre);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-lg), 4vw, var(--text-xl));
+    font-weight: 400;
+    color: var(--color-grafito);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .page-intro {
+    font-size: var(--text-base);
+    color: var(--color-piedra);
+    line-height: 1.6;
+    max-width: 36rem;
+  }
+
+  /* ── Lista ── */
+  .lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Item ── */
+  .item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 28px;
+    padding: 40px 0;
+    border-bottom: 0.5px solid rgba(44, 42, 40, 0.12);
+  }
+
+  .item:first-child {
+    border-top: 0.5px solid rgba(44, 42, 40, 0.12);
+    margin-top: 8px;
+  }
+
+  .item-num {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ocre);
+    opacity: 0.6;
+    padding-top: 4px;
+  }
+
+  .item-titulo {
+    font-family: var(--font-heading);
+    font-size: var(--text-md);
+    font-weight: 400;
+    color: var(--color-grafito);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .item-desc {
+    font-size: var(--text-sm);
+    color: var(--color-piedra);
+    line-height: 1.6;
+  }
+
+  /* ── CTA ── */
+  .contacto-strip {
+    margin-top: 16px;
+    background: var(--color-crema);
+    border-top: 0.5px solid rgba(44, 42, 40, 0.12);
+    padding: 48px 0;
+  }
+
+  .container--strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .contacto-text {
+    font-size: var(--text-base);
+    color: var(--color-grafito);
+    line-height: 1.5;
+  }
+
+  .contacto-btn {
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-grafito);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 0.5px solid rgba(44, 42, 40, 0.35);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .contacto-btn:hover {
+    background: rgba(44, 42, 40, 0.05);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .page-header {
+      padding: 48px 0 40px;
+    }
+
+    .item {
+      grid-template-columns: 32px 1fr;
+      gap: 16px;
+      padding: 32px 0;
+    }
+
+    .container--strip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+</style>
